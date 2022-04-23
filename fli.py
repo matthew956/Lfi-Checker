@@ -36,3 +36,8 @@ for list in fli_list.readlines():
     url_list = url + list
     r = requests.get(url_list)
     print(r.text)
+    
+except KeyboardInterrupt:
+	print('\033[1;31m \nGoodbye :(')
+except Exception as e:
+	print('\033[1;31m \nError')
