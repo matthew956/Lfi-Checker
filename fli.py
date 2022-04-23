@@ -24,7 +24,15 @@ print(f"""{bcolors.FAIL}
 print(f"""{bcolors.OKCYAN}Made by horizon.sh{bcolors.ENDC}
 ==================================================================================\n""")
 
-url = input("Select the URL must be like this (https://example.com/index.php?page=): ")
+url = input("[-] Select the URL must be like this (https://example.com/index.php?page=): ")
+wordlist = input("[-] Select S for a smaller list or B for a bigger list: ")
+
+if wordlist.lower() == 's':
+    fli_list = open("list_normal.txt", "r+")
+elif wordlist.lower() == 'b':
+    fli_list = open("list_bigger.txt", "r+")
+else:
+    print("Not a valid option")
 
 for list in fli_list.readlines():
     url_list = url + list
