@@ -20,14 +20,6 @@ Projects
 Wiki
 Security
 Insights
-LFISuite/pathtotest.txt
-@D35m0nd142
-D35m0nd142 Update pathtotest.txt
-Latest commit 470e01f on 8 Apr 2018
- History
- 1 contributor
-569 lines (568 sloc)  21.7 KB
-   
 /etc/passwd
 ../logs/access_log
 ../logs/error_log
