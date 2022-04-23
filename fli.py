@@ -35,20 +35,3 @@ for list in fli_list.readlines():
     url_list = url + list
     r = requests.get(url_list)
     print(r.text)
-    #if r.text == 200:
-      #print(str(url_list))
-      
-
-
-
-
-
-
-    #if args.show == True:
-        #if r.status_code == 200:
-            #print("Success! " + url_list)
-        #else:
-            #print("Failed! " + url_list)
-    #else:
-        #if r.status_code == 200:
-            #print("Success! " + url_list)
