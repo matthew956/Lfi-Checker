@@ -1,10 +1,4 @@
 import requests
-import argparse
-
-parser = argparse.ArgumentParser(description='Checks for FLI vulnerabilities', epilog='Made by horizon.sh')
-parser.add_argument('-u', '--url', type=str, required=True, help='Checks for url')
-parser.add_argument('-s', '--show', action='store_true', help='Show all urls, failed and not failed.')
-args = parser.parse_args()
 
 class bcolors:
     HEADER = '\033[95m'
@@ -17,7 +11,6 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-url = str(args.url)
 fli_list = open("list.txt", "r+")
 
 print(f"""{bcolors.FAIL}
@@ -30,6 +23,8 @@ print(f"""{bcolors.FAIL}
 
 print(f"""{bcolors.OKCYAN}Made by horizon.sh{bcolors.ENDC}
 ==================================================================================\n""")
+
+url = input("Select the URL must be like this (https://example.com/index.php?page=): ")
 
 for list in fli_list.readlines():
     url_list = url + list
