@@ -24,12 +24,15 @@ try:
     ==================================================================================\n""")
 
     url = input("[-] Select the URL must be like this (https://example.com/index.php?page=): ")
-    wordlist = input("[-] Select S for a smaller list or B for a bigger list: ")
+    wordlist = input("[-] Select S for a smaller list or B for a bigger list (or C to choose your own wordlist): ")
 
     if wordlist.lower() == 's':
         fli_list = open("list_normal.txt", "r+")
     elif wordlist.lower() == 'b':
         fli_list = open("list_bigger.txt", "r+")
+    elif wordlist.lower() == 'c':
+	choose_list = input("[-] Choose the list: ")
+	fli_list = open(f"{choose_list}", "r+")
     else:
         print("Not a valid option")
 
