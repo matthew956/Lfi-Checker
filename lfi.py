@@ -41,9 +41,9 @@ try:
 		url_list = url + list
 		r = requests.get(url_list)
 		if error in str(r.text):
-			print(bcolors.FAIL + "[-]" + url_list + "Failed!" + bcolors.ENDC)
+			print(bcolors.FAIL + "\n [-]" + url_list + "Failed!" + bcolors.ENDC)
 		else:
-			print(bcolors.OKGREEN + "[-]" + url_list + "Success!" + bcolors.ENDC)
+			print(bcolors.OKGREEN + "\n [-]" + url_list + "Success!" + bcolors.ENDC)
 			break
 
 except (KeyboardInterrupt):
