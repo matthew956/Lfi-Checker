@@ -28,16 +28,16 @@ try:
 	error = input(f"{bcolors.OKGREEN}[-] Input the error that you receive:{bcolors.ENDC} ")
 
 	if wordlist.lower() == 's':
-		fli_list = open("list_normal.txt", "r+")
+		lfi_list = open("list_normal.txt", "r+")
 	elif wordlist.lower() == 'b':
-		fli_list = open("list_bigger.txt", "r+")
+		lfi_list = open("list_bigger.txt", "r+")
 	elif wordlist.lower() == 'c':
 		choose_list = input("[-] Choose the list: ")
-		fli_list = open(f"{choose_list}", "r+")
+		lfi_list = open(f"{choose_list}", "r+")
 	else:
 		print("Not a valid option")
 
-	for list in fli_list.readlines():
+	for list in lfi_list.readlines():
 		url_list = url + list
 		r = requests.get(url_list)
 		if error in str(r.text):
