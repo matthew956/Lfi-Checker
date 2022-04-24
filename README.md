@@ -5,6 +5,6 @@
 <div align="center">
   <center><h1>Running the program</h1></center>
 </div>
-<h4>To run the program you will just need to get to the directory that you installed FLI Checker and run <code>python3 fli.py</code>
+<h4>To run the program you will just need to get to the directory that you installed FLI Checker and run <code>python3 lfi.py</code>
   
 <h6>Made by horizon.sh, contributed by <a href="https://github.com/MrZkexe">MrZkexe</a></h6>
