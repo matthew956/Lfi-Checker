@@ -36,14 +36,15 @@ try:
 		lfi_list = open(f"{choose_list}", "r+")
 	else:
 		print("Not a valid option")
-
+	print("===============================================================================================================")
+	
 	for list in lfi_list.readlines():
 		url_list = url + list
 		r = requests.get(url_list)
 		if error in str(r.text):
-			print(bcolors.FAIL + "\n [-]" + url_list + "Failed!" + bcolors.ENDC)
+			print(bcolors.FAIL + "\n[-] " + url_list + "Failed!" + bcolors.ENDC)
 		else:
-			print(bcolors.OKGREEN + "\n [-]" + url_list + "Success!" + bcolors.ENDC)
+			print(bcolors.OKGREEN + "\n[-] " + url_list + "Success!" + bcolors.ENDC)
 			break
 
 except (KeyboardInterrupt):
