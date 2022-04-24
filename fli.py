@@ -1,45 +1,51 @@
 import requests
 
 class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+	HEADER = '\033[95m'
+	OKBLUE = '\033[94m'
+	OKCYAN = '\033[96m'
+	OKGREEN = '\033[92m'
+	WARNING = '\033[93m'
+	FAIL = '\033[91m'
+	ENDC = '\033[0m'
+	BOLD = '\033[1m'
+	UNDERLINE = '\033[4m'
 
 try:
-    print(f"""{bcolors.FAIL}
-    ███████╗██╗░░░░░██╗  ░█████╗░██╗░░██╗███████╗░█████╗░██╗░░██╗███████╗██████╗░
-    ██╔════╝██║░░░░░██║  ██╔══██╗██║░░██║██╔════╝██╔══██╗██║░██╔╝██╔════╝██╔══██╗
-    █████╗░░██║░░░░░██║  ██║░░╚═╝███████║█████╗░░██║░░╚═╝█████═╝░█████╗░░██████╔╝
-    ██╔══╝░░██║░░░░░██║  ██║░░██╗██╔══██║██╔══╝░░██║░░██╗██╔═██╗░██╔══╝░░██╔══██╗
-    ██║░░░░░███████╗██║  ╚█████╔╝██║░░██║███████╗╚█████╔╝██║░╚██╗███████╗██║░░██║
-    ╚═╝░░░░░╚══════╝╚═╝  ░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝{bcolors.ENDC}""")
+	print(f"""{bcolors.FAIL}
+	███████╗██╗░░░░░██╗  ░█████╗░██╗░░██╗███████╗░█████╗░██╗░░██╗███████╗██████╗░
+	██╔════╝██║░░░░░██║  ██╔══██╗██║░░██║██╔════╝██╔══██╗██║░██╔╝██╔════╝██╔══██╗
+	█████╗░░██║░░░░░██║  ██║░░╚═╝███████║█████╗░░██║░░╚═╝█████═╝░█████╗░░██████╔╝
+	██╔══╝░░██║░░░░░██║  ██║░░██╗██╔══██║██╔══╝░░██║░░██╗██╔═██╗░██╔══╝░░██╔══██╗
+	██║░░░░░███████╗██║  ╚█████╔╝██║░░██║███████╗╚█████╔╝██║░╚██╗███████╗██║░░██║
+	╚═╝░░░░░╚══════╝╚═╝  ░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝{bcolors.ENDC}""")
 
-    print(f"""{bcolors.OKCYAN}Made by horizon.sh{bcolors.ENDC}
-    ==================================================================================\n""")
+	print(f"""{bcolors.OKCYAN}Made by horizon.sh{bcolors.ENDC}
+	=======================================================================================================\n""")
 
-    url = input("[-] Select the URL must be like this (https://example.com/index.php?page=): ")
-    wordlist = input("[-] Select S for a smaller list or B for a bigger list (or C to choose your own wordlist): ")
+	url = input(f"{bcolors.OKGREEN}[-] Select the URL must be like this (https://example.com/index.php?page=):{bcolors.ENDC} ")
+	wordlist = input(f"{bcolors.OKGREEN}[-] Select S for a smaller list or B for a bigger list (or C to choose your own wordlist):{bcolors.ENDC} ")
+	error = input(f"{bcolors.OKGREEN}[-] Input the error that you receive:{bcolors.ENDC} ")
 
-    if wordlist.lower() == 's':
-        fli_list = open("list_normal.txt", "r+")
-    elif wordlist.lower() == 'b':
-        fli_list = open("list_bigger.txt", "r+")
-    elif wordlist.lower() == 'c':
-	choose_list = input("[-] Choose the list: ")
-	fli_list = open(f"{choose_list}", "r+")
-    else:
-        print("Not a valid option")
+	if wordlist.lower() == 's':
+		fli_list = open("list_normal.txt", "r+")
+	elif wordlist.lower() == 'b':
+		fli_list = open("list_bigger.txt", "r+")
+	elif wordlist.lower() == 'c':
+		choose_list = input("[-] Choose the list: ")
+		fli_list = open(f"{choose_list}", "r+")
+	else:
+		print("Not a valid option")
 
-    for list in fli_list.readlines():
-        url_list = url + list
-        r = requests.get(url_list)
-        print(r.text)
+	for list in fli_list.readlines():
+		url_list = url + list
+		r = requests.get(url_list)
+		if error in str(r.text):
+			print(bcolors.FAIL + "[-]" + url_list + "Failed!" + bcolors.ENDC)
+		else:
+			print(bcolors.OKGREEN + "[-]" + url_list + "Success!" + bcolors.ENDC)
+			break
+
 except (KeyboardInterrupt):
 	print(f'{bcolors.WARNING} \nYou quit this session {bcolors.ENDC}')
 except (Exception) as e:
