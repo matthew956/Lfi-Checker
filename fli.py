@@ -20,8 +20,8 @@ try:
 	██║░░░░░███████╗██║  ╚█████╔╝██║░░██║███████╗╚█████╔╝██║░╚██╗███████╗██║░░██║
 	╚═╝░░░░░╚══════╝╚═╝  ░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝{bcolors.ENDC}""")
 
-	print(f"""{bcolors.OKCYAN}Made by horizon.sh{bcolors.ENDC}
-	=======================================================================================================\n""")
+	print(f"{bcolors.OKCYAN}Made by horizon.sh{bcolors.ENDC}")
+	print("===============================================================================================================")
 
 	url = input(f"{bcolors.OKGREEN}[-] Select the URL must be like this (https://example.com/index.php?page=):{bcolors.ENDC} ")
 	wordlist = input(f"{bcolors.OKGREEN}[-] Select S for a smaller list or B for a bigger list (or C to choose your own wordlist):{bcolors.ENDC} ")
