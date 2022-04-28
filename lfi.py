@@ -48,6 +48,6 @@ try:
 			break
 
 except (KeyboardInterrupt):
-	print(f'{bcolors.WARNING} \nYou quit this session {bcolors.ENDC}')
+	print(f'{bcolors.WARNING} \n[-] You quit this session {bcolors.ENDC}')
 except (Exception) as e:
-	print(f'{bcolors.FAIL} \nError {bcolors.ENDC}')
+	print(f'{bcolors.FAIL} \n[-] Error {bcolors.ENDC}')
