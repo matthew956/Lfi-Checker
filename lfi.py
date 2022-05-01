@@ -1,4 +1,4 @@
-import requests, sys
+import requests, sys, os
 
 class bcolors:
 	HEADER = '\033[95m'
