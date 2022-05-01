@@ -10,8 +10,15 @@ class bcolors:
 	ENDC = '\033[0m'
 	BOLD = '\033[1m'
 	UNDERLINE = '\033[4m'
+	
+def clear():
+    if sys.platform.startswith('linux'):
+        os.system('clear')
+    elif sys.platform.startswith('win32'):
+        os.system('cls')
 
 try:
+	clear()
 	print(f"""{bcolors.FAIL}
 	██╗░░░░░███████╗██╗  ░█████╗░██╗░░██╗███████╗░█████╗░██╗░░██╗███████╗██████╗░
 	██║░░░░░██╔════╝██║  ██╔══██╗██║░░██║██╔════╝██╔══██╗██║░██╔╝██╔════╝██╔══██╗
@@ -37,6 +44,7 @@ try:
 	else:
 		print("Not a valid option")
 	print("===============================================================================================================")
+	clear()
 	
 	for list in lfi_list.readlines():
 		url_list = url + list
