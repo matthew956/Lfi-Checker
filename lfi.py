@@ -17,7 +17,7 @@ def loops(lfi_list, error, url):
 		lista = url + lista.rstrip('\n')
 		r = requests.get(lista)
 		if error in str(r.text):
-			print(bcolors.FAIL + "-] " + lista + " Invalido!" + bcolors.ENDC, end="\r")
+			print(bcolors.FAIL + "[-] " + lista + " Invalido!" + bcolors.ENDC)
 		else:
 			print(bcolors.OKGREEN + "\n[+] " + lista + " Valido!" + bcolors.ENDC)
 
