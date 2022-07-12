@@ -50,7 +50,7 @@ def msgload():
 	""")
 
 	print(f"{bcolors.OKGREEN}Made by horizon.sh{bcolors.ENDC}")
-	print("\n[!] legal disclaimer: Usage of Lfi Checker for attacking targets without prior mutual consent is illegal. The developer assumes no liability and is not responsible for any misuse or damage caused by this program.")
+	print("\n[!] legal disclaimer: Usage of LFIchecker for attacking targets without prior mutual consent is illegal. The developer assumes no liability and is not responsible for any misuse or damage caused by this program.")
 	inputs()
 
 def clear():
