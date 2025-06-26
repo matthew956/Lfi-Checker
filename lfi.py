@@ -84,7 +84,7 @@ def msgload(url, wordlist, error, thread_num):
     selec(wordlist, error, url, thread_num)
 
 def clear():
-    os.system('clear|cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='LFI checker')
